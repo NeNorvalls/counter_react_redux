@@ -1,17 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import App from "./App";
-import store from "./store";
-import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "./actions/counterAction";
 
-const root = document.getElementById("root");
+const App = () => {
+  const count = useSelector((state) => state.counter.count);
+  const dispatch = useDispatch();
 
-const reactRoot = ReactDOM.createRoot(root);
-reactRoot.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-);
+  return (
+    <div>
+      <h1>Counter App</h1>
+      <p>Count: {count}</p>
+      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
+    </div>
+  );
+};
+
+export default App;
