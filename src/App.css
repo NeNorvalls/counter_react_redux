@@ -1,17 +1,76 @@
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  background-size: 1000% 1000%;
+  animation: rainbowAnimation 15s linear infinite;
+}
+
+@keyframes rainbowAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-width: 40vw;
+  min-height: 40vh;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+h1,
+p,
+button {
+  color: darkred;
+  font-weight: 600;
 }
 
 .button-container {
-  margin-top: 20px;
+  margin: 1rem;
 }
 
 button {
   padding: 10px 15px;
   font-size: 16px;
-  margin: 0 10px;
+  margin: 1.5rem;
+  border: 3px solid darkred;
+}
+
+.app-container,
+button {
+  border-radius: 10px;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gold;
+  color: darkred;
 }
