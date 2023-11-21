@@ -33,8 +33,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 40vw;
-  min-height: 40vh;
+  min-width: 20vw !important;
+  min-height: 35vh !important;
   margin: auto;
   position: absolute;
   top: 50%;
